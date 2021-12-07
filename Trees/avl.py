@@ -65,7 +65,7 @@ class AVL(BST):
             return node
 
     def delete(self, key, current_root: AVLNode)-> AVLNode:
-        current_root = BST.delete(key, current_root)
+        current_root = super().delete(key, current_root)
         current_root.height = self.updated_height(current_root)
         current_root = self.balance_tree(current_root)
         return current_root
